@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import ReactImageAnnotate from "react-image-annotate";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ReactImageAnnotate
+        selectedImage="https://homepages.cae.wisc.edu/~ece533/images/barbara.png"
+        taskDescription="# Draw region around each face\n\nInclude chin and hair."
+        images={[
+          {
+            src: "https://homepages.cae.wisc.edu/~ece533/images/barbara.png",
+            name: "Image 1"
+          }
+        ]}
+        regionClsList={["Man Face", "Woman Face"]}
+      />
     </div>
   );
 }
